@@ -14,7 +14,9 @@ const NewsForm = () => {
 
     setLoading(true);
     try {
-      const res = await axios.post('http://127.0.0.1:5000/predict', { text: newsText });
+      const res = await axios.post('https://fake-news-predict-using-ml-bk-2.onrender.com/predict', {
+        text: newsText,
+      });
       const prediction = res.data.prediction;
       setResult(prediction === 'FAKE' ? '❌ Fake News' : '✅ Real News');
     } catch (error) {
